@@ -1,10 +1,10 @@
-package com.projetofinal.zelda;
+package com.projetofinal.userservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ZeldaApplicationTests {
+class UserServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

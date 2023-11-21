@@ -1,13 +1,13 @@
-package com.projetofinal.zelda;
+package com.projetofinal.userservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ZeldaApplication {
+public class UserServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ZeldaApplication.class, args);
+		SpringApplication.run(UserServiceApplication.class, args);
 	}
 
 }
