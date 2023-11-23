@@ -1,17 +1,42 @@
 package com.github.user_service.controller;
 
 
+import com.github.user_service.model.Usuario;
+import com.github.user_service.model.records.RequestUsuario;
 import com.github.user_service.repository.UsuariosRepository;
+import com.github.user_service.service.UsuariosService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuariosController {
 
+    private UsuariosService usuariosService;
+
     @Autowired
-    private UsuariosRepository usuarioRepository;
+    private UsuariosRepository usuariosRepository;
+
+    @GetMapping
+    public ResponseEntity listarUsuarios() {
+        List<Usuario> usuarios = usuariosService.listaUsuarios();
+        return ResponseEntity.status(HttpStatus.OK).body(usuarios);
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity adicionarUsuario(@Valid @RequestBody @ResponseBody Usuario) {
+        try {
+            Usuario usuario = new Usuario(RequestUsuario);
+            NinjasModel ninjaCadastrado = ninjasService.addNinja(ninja);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Ninja cadastrado com sucesso!");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(e.getMessage());
+        }
+    }
 
 //    private final List<TaskModel> tasks = new ArrayList<>();
 //

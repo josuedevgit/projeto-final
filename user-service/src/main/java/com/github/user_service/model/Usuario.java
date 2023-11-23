@@ -8,7 +8,7 @@ import lombok.Data;
 @AllArgsConstructor
 @Entity
 @Table(name = "usuarios")
-public class Usuarios {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
