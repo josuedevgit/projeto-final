@@ -1,18 +1,17 @@
 package com.github.user_service.controller;
 
 
-import com.github.user_service.repository.UsuarioRepository;
-import com.github.user_service.service.UsuarioService;
+import com.github.user_service.repository.UsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/usuarios")
-public class UsuarioController {
+public class UsuariosController {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UsuariosRepository usuarioRepository;
 
 //    private final List<TaskModel> tasks = new ArrayList<>();
 //
