@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/usuarios")
-public class UsuariosController {
+public class
+UsuariosController {
 
     @Autowired
     private UsuariosRepository usuarioRepository;
