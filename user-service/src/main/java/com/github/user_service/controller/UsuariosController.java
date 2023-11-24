@@ -39,4 +39,11 @@ public class UsuariosController {
             return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(e.getMessage());
         }
     }
+
+//    @PutMapping("/update")
+//    public ResponseEntity atualizarUsuario(@Valid @RequestBody RequestUsuario requestUsuario, Long id) {
+//        Usuario usuario = new Usuario(requestUsuario);
+//        Usuario usuarioAtualizado = usuariosService.updateUsuario(usuario, id);
+//        return ResponseEntity.status(HttpStatus.CREATED).body("Usuário " + usuarioAtualizado.getNome() + " atualizado com sucesso!");
+//    }
 }
