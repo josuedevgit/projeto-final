@@ -5,6 +5,7 @@ import com.github.user_service.model.Usuario;
 import com.github.user_service.model.records.RequestUsuario;
 import com.github.user_service.repository.UsuariosRepository;
 import com.github.user_service.service.UsuariosService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.List;
 @RequestMapping("/api/usuarios")
 public class UsuariosController {
 
+    @Autowired
     private UsuariosService usuariosService;
 
     @Autowired
@@ -28,52 +30,13 @@ public class UsuariosController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity adicionarUsuario(@Valid @RequestBody @ResponseBody Usuario) {
+    public ResponseEntity adicionarUsuario(@Valid @RequestBody RequestUsuario requestUsuario){
         try {
-            Usuario usuario = new Usuario(RequestUsuario);
-            NinjasModel ninjaCadastrado = ninjasService.addNinja(ninja);
-            return ResponseEntity.status(HttpStatus.CREATED).body("Ninja cadastrado com sucesso!");
+            Usuario usuario = new Usuario(requestUsuario);
+            Usuario usuarioCadastrado = usuariosService.addUsuario(usuario);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Usuario cadastrado com sucesso!");
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(e.getMessage());
         }
     }
-
-//    private final List<TaskModel> tasks = new ArrayList<>();
-//
-//    @GetMapping
-//    public List<TaskModel> getAllTasks() {
-//        return taskServices.getAllTasks();
-//    }
-//
-//    @PostMapping("/add")
-//
-//    public ResponseEntity<String> addTask(@RequestBody TaskModel task) {
-//        try {
-//            taskServices.addTask(task);
-//            return new ResponseEntity<>("Tarefa adicionada com sucesso.", HttpStatus.OK);
-//        } catch (Exception ex) {
-//            return new ResponseEntity<>("Erro.", HttpStatus.BAD_REQUEST);
-//        }
-//    }
-//
-//    @PutMapping("/edit/{taskId}")
-//    public ResponseEntity<String> editTask(@PathVariable int taskId, @RequestBody TaskModel task) {
-//        try {
-//            taskServices.editTask(taskId, task);
-//            return new ResponseEntity<>("Tarefa editada com sucesso.", HttpStatus.OK);
-//        } catch (Exception ex) {
-//            return new ResponseEntity<>("Erro ao editar a tarefa.", HttpStatus.BAD_REQUEST);
-//        }
-//    }
-//
-//    @DeleteMapping("/delete/{taskId}")
-//    public ResponseEntity<String> deleteTask(@PathVariable int taskId) {
-//        try {
-//            taskServices.deleteTask(taskId);
-//            return new ResponseEntity<>("Tarefa removida com sucesso.", HttpStatus.OK);
-//        } catch (Exception ex) {
-//            return new ResponseEntity<>("Erro ao remover a tarefa.", HttpStatus.BAD_REQUEST);
-//        }
-//    }
-//}
 }
