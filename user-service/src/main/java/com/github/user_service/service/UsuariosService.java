@@ -1,6 +1,7 @@
 package com.github.user_service.service;
 
 import com.github.user_service.model.Usuario;
+import com.github.user_service.model.records.RequestUsuario;
 import com.github.user_service.repository.UsuariosRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,14 +27,14 @@ public class UsuariosService {
         return usuario;
     }
 
-    public Usuario updateUsuario(Usuario usuario, Long id){
+    public Usuario updateUsuario(RequestUsuario requestUsuario, Long id){
         Optional<Usuario> usuarioOptional = usuariosRepository.findById(id);
 
         if (usuarioOptional.isPresent()) {
             Usuario usuarioExistente = usuarioOptional.get();
 
-            usuarioExistente.setNome(usuario.getNome());
-            usuarioExistente.setIdade(usuario.getIdade());
+            usuarioExistente.setNome(requestUsuario.nome());
+            usuarioExistente.setIdade(requestUsuario.idade());
 
             usuariosRepository.save(usuarioExistente);
             return usuarioExistente;

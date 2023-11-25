@@ -1,6 +1,4 @@
 package com.github.user_service.controller;
-
-
 import com.github.user_service.model.Usuario;
 import com.github.user_service.model.records.RequestUsuario;
 import com.github.user_service.repository.UsuariosRepository;
@@ -40,10 +38,10 @@ public class UsuariosController {
         }
     }
 
-//    @PutMapping("/update")
-//    public ResponseEntity atualizarUsuario(@Valid @RequestBody RequestUsuario requestUsuario, Long id) {
-//        Usuario usuario = new Usuario(requestUsuario);
-//        Usuario usuarioAtualizado = usuariosService.updateUsuario(usuario, id);
-//        return ResponseEntity.status(HttpStatus.CREATED).body("Usuário " + usuarioAtualizado.getNome() + " atualizado com sucesso!");
-//    }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<String> atualizarUsuario(@PathVariable Long id,  @RequestBody @Valid RequestUsuario requestUsuario) {
+        Usuario usuarioAtualizado = usuariosService.updateUsuario(requestUsuario, id);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Usuário " + usuarioAtualizado.getNome() + " atualizado com sucesso!");
+    }
+
 }
