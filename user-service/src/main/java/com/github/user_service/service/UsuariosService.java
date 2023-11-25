@@ -43,7 +43,7 @@ public class UsuariosService {
         }
     }
 
-    public Usuario deleteUsuario(Usuario usuario, Long id) {
+    public Usuario deleteUsuario(Long id) {
         Optional<Usuario> usuarioOptional = usuariosRepository.findById(id);
 
         if(usuarioOptional.isPresent()) {

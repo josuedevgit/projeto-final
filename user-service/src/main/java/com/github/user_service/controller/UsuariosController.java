@@ -44,4 +44,10 @@ public class UsuariosController {
         return ResponseEntity.status(HttpStatus.CREATED).body("Usuário " + usuarioAtualizado.getNome() + " atualizado com sucesso!");
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deletarUsuario(@PathVariable Long id) {
+        Usuario usuarioDeletado = usuariosService.deleteUsuario(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Usuário deletado com sucesso!");
+    }
+
 }
