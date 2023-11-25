@@ -22,4 +22,3 @@ public class ZeldaApiService {
         return restTemplate.getForObject(urlComParametros, JogoZelda[].class, params);
         }
     }
-
