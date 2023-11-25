@@ -4,8 +4,11 @@ import com.github.user_service.model.records.RequestUsuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
