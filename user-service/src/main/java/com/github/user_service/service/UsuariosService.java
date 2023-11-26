@@ -1,5 +1,4 @@
 package com.github.user_service.service;
-
 import com.github.user_service.model.Usuario;
 import com.github.user_service.model.records.RequestUsuario;
 import com.github.user_service.repository.UsuariosRepository;

@@ -1,5 +1,4 @@
 package com.github.user_service.model;
-
 import com.github.user_service.model.records.RequestUsuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
