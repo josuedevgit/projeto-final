@@ -24,6 +24,7 @@ public class UsuariosService {
     public Usuario addUsuario(Usuario usuario){
         usuariosRepository.save(usuario);
         return usuario;
+
     }
 
     public Usuario updateUsuario(RequestUsuario requestUsuario, Long id){
