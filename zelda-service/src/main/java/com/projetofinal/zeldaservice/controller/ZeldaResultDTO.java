@@ -1,13 +1,12 @@
-package com.projetofinal.zeldaservice.model;
+package com.projetofinal.zeldaservice.controller;
 
-import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
+
 @Getter
 @Setter
-public class JogoZelda {
+public class ZeldaResultDTO {
     private String nome;
     private String descricao;
     private String publicante;
