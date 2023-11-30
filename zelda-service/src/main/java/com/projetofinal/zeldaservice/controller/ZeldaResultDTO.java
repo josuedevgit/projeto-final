@@ -1,15 +1,13 @@
 package com.projetofinal.zeldaservice.controller;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-
-@Getter
-@Setter
+@Data
 public class ZeldaResultDTO {
-    private String nome;
-    private String descricao;
-    private String publicante;
-    private String dataLancamento;
+    private String name;
+    private String description;
+    private String developer;
+    private String publisher;
+    private String released_date;
     private long id;
 }
