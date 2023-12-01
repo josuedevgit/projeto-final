@@ -1,5 +1,5 @@
 package com.projetofinal.zeldaservice.service;
 
-public class ZeldaApiService {
+public class ConsultaJogoService {
 
     }

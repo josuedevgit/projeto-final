@@ -1,9 +1,9 @@
-package com.projetofinal.zeldaservice.controller;
+package com.projetofinal.zeldaservice.model;
 
 import lombok.Data;
 
 @Data
-public class ZeldaResultDTO {
+public class ZeldaResult {
     private String name;
     private String description;
     private String developer;
