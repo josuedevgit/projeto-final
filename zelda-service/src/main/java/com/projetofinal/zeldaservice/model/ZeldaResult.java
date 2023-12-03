@@ -2,6 +2,8 @@ package com.projetofinal.zeldaservice.model;
 
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 public class ZeldaResult {
     private String name;
@@ -9,5 +11,5 @@ public class ZeldaResult {
     private String developer;
     private String publisher;
     private String released_date;
-    private long id;
+    private UUID id;
 }
