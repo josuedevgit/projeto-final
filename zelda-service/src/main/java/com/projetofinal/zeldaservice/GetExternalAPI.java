@@ -14,11 +14,11 @@ public class GetExternalAPI {
 
 		WebClient.Builder builder = WebClient.builder();
 
-		String zelda = builder.build()
+		Zelda zelda = builder.build()
 				.get()
 				.uri(url)
 				.retrieve()
-				.bodyToMono(String.class)
+				.bodyToMono(Zelda.class)
 				.block();
 
 
