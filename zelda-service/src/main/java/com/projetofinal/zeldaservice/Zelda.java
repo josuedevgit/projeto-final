@@ -2,13 +2,13 @@ package com.projetofinal.zeldaservice;
 
 import lombok.Data;
 
-
 @Data
 public class Zelda {
-    private String nome;
-    private String descricao;
-    private String desenvolvedor;
-    private String publicante;
-    private String dataLancamento;
-    private long id;
+    private String name;
+    private String description;
+    private String developer;
+    private String publisher;
+    private String released_date;
+    private String id;
+
 }
