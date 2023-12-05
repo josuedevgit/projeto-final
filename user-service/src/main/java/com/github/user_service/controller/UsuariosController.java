@@ -13,7 +13,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/usuarios")
-public class UsuariosController {
+public class
+UsuariosController {
 
     @Autowired
     private UsuariosService usuariosService;
