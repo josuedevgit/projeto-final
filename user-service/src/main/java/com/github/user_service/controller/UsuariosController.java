@@ -1,10 +1,15 @@
 package com.github.user_service.controller;
-
-
+import com.github.user_service.model.Usuario;
+import com.github.user_service.model.records.RequestUsuario;
 import com.github.user_service.repository.UsuariosRepository;
+import com.github.user_service.service.UsuariosService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -12,44 +17,38 @@ public class
 UsuariosController {
 
     @Autowired
-    private UsuariosRepository usuarioRepository;
+    private UsuariosService usuariosService;
 
-//    private final List<TaskModel> tasks = new ArrayList<>();
-//
-//    @GetMapping
-//    public List<TaskModel> getAllTasks() {
-//        return taskServices.getAllTasks();
-//    }
-//
-//    @PostMapping("/add")
-//
-//    public ResponseEntity<String> addTask(@RequestBody TaskModel task) {
-//        try {
-//            taskServices.addTask(task);
-//            return new ResponseEntity<>("Tarefa adicionada com sucesso.", HttpStatus.OK);
-//        } catch (Exception ex) {
-//            return new ResponseEntity<>("Erro.", HttpStatus.BAD_REQUEST);
-//        }
-//    }
-//
-//    @PutMapping("/edit/{taskId}")
-//    public ResponseEntity<String> editTask(@PathVariable int taskId, @RequestBody TaskModel task) {
-//        try {
-//            taskServices.editTask(taskId, task);
-//            return new ResponseEntity<>("Tarefa editada com sucesso.", HttpStatus.OK);
-//        } catch (Exception ex) {
-//            return new ResponseEntity<>("Erro ao editar a tarefa.", HttpStatus.BAD_REQUEST);
-//        }
-//    }
-//
-//    @DeleteMapping("/delete/{taskId}")
-//    public ResponseEntity<String> deleteTask(@PathVariable int taskId) {
-//        try {
-//            taskServices.deleteTask(taskId);
-//            return new ResponseEntity<>("Tarefa removida com sucesso.", HttpStatus.OK);
-//        } catch (Exception ex) {
-//            return new ResponseEntity<>("Erro ao remover a tarefa.", HttpStatus.BAD_REQUEST);
-//        }
-//    }
-//}
+    @Autowired
+    private UsuariosRepository usuariosRepository;
+
+    @GetMapping
+    public ResponseEntity listarUsuarios() {
+        List<Usuario> usuarios = usuariosService.listaUsuarios();
+        return ResponseEntity.status(HttpStatus.OK).body(usuarios);
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity adicionarUsuario(@Valid @RequestBody RequestUsuario requestUsuario){
+        try {
+            Usuario usuario = new Usuario(requestUsuario);
+            Usuario usuarioCadastrado = usuariosService.addUsuario(usuario);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Usuario cadastrado com sucesso!");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(e.getMessage());
+        }
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<String> atualizarUsuario(@PathVariable Long id,  @RequestBody @Valid RequestUsuario requestUsuario) {
+        Usuario usuarioAtualizado = usuariosService.updateUsuario(requestUsuario, id);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Usuário " + usuarioAtualizado.getNome() + " atualizado com sucesso!");
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deletarUsuario(@PathVariable Long id) {
+        Usuario usuarioDeletado = usuariosService.deleteUsuario(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Usuário deletado com sucesso!");
+    }
+
 }
