@@ -34,7 +34,3 @@ Este projeto foi proposto na aula do Geração Caldeira e executado por cinco al
 !(Bianca)
 !(Josué)
 !(Kah)
-
-
-
-
