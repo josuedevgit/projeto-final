@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("zelda")
+@RequestMapping("/zelda")
 public class ZeldaController {
 
     @Autowired
@@ -23,7 +23,7 @@ public class ZeldaController {
        return response;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/zelda/{id}")
     public ZeldaDTO getZeldaById(@PathVariable String id) {
         return zeldaService.getZeldaById(id);
     }

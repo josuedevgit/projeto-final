@@ -1,6 +1,6 @@
 package com.projetofinal.zeldaservice.service;
 
-import com.projetofinal.zeldaservice.Zelda;
+import com.projetofinal.zeldaservice.model.Zelda;
 import com.projetofinal.zeldaservice.model.RetornoJogo;
 import com.projetofinal.zeldaservice.model.RetornoJogoPorId;
 import com.projetofinal.zeldaservice.model.ZeldaDTO;

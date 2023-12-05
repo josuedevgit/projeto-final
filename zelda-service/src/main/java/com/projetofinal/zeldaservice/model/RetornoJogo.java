@@ -1,6 +1,5 @@
 package com.projetofinal.zeldaservice.model;
 
-import com.projetofinal.zeldaservice.Zelda;
 import lombok.Data;
 
 import java.util.List;

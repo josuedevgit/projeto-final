@@ -1,4 +1,4 @@
-package com.projetofinal.zeldaservice;
+package com.projetofinal.zeldaservice.model;
 
 import lombok.Data;
 
