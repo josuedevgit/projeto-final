@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: listar-usuarios
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios
