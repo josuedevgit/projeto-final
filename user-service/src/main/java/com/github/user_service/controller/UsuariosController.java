@@ -1,5 +1,7 @@
 package com.github.user_service.controller;
+import com.github.user_service.model.Zelda;
 import com.github.user_service.model.Usuario;
+import com.github.user_service.model.UsuarioJogosFavoritosDTO;
 import com.github.user_service.model.records.RequestUsuario;
 import com.github.user_service.repository.UsuariosRepository;
 import com.github.user_service.service.UsuariosService;
@@ -10,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -26,6 +29,25 @@ UsuariosController {
     public ResponseEntity listarUsuarios() {
         List<Usuario> usuarios = usuariosService.listaUsuarios();
         return ResponseEntity.status(HttpStatus.OK).body(usuarios);
+    }
+
+    @GetMapping("/{id}/jogosFavoritos")
+    public ResponseEntity<?> getJogosFavoritos(@PathVariable Long id) {
+        Optional<Usuario> usuarioOptional = usuariosRepository.findById(id);
+
+        if (!usuarioOptional.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        Usuario usuario = usuarioOptional.get();
+
+        List<Zelda> jogosFavoritos = usuario.getJogosFavoritos();
+
+        UsuarioJogosFavoritosDTO dto = new UsuarioJogosFavoritosDTO();
+        dto.setNome(usuario.getNome());
+        dto.setJogosFavoritos(jogosFavoritos);
+
+        return ResponseEntity.ok(dto);
     }
 
     @PostMapping("/add")
