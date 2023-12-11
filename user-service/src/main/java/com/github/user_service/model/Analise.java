@@ -18,6 +18,9 @@ public class Analise {
     @Column(name = "review", nullable = false, length = 3000)
     private String review;
 
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "id_zelda", nullable = false)
@@ -25,6 +28,7 @@ public class Analise {
 
     public Analise(String review, Usuario usuario, Zelda jogoZelda) {
         this.review = review;
+        this.usuario = usuario;
         this.jogoFavorito = jogoZelda;
     }
 }

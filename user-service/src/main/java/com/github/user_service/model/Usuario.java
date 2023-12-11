@@ -1,4 +1,5 @@
 package com.github.user_service.model;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.github.user_service.model.records.RequestUsuario;
 import jakarta.persistence.*;
@@ -17,7 +18,10 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "nome")
     private String nome;
+
     private int idade;
 
     @JsonIgnore
