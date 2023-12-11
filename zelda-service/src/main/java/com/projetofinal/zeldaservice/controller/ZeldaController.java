@@ -23,7 +23,7 @@ public class ZeldaController {
        return response;
     }
 
-    @GetMapping("/zelda/{id}")
+    @GetMapping("/{id}")
     public ZeldaDTO getZeldaById(@PathVariable String id) {
         return zeldaService.getZeldaById(id);
     }
