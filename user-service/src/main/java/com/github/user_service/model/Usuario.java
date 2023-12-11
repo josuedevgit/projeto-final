@@ -1,5 +1,5 @@
 package com.github.user_service.model;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.github.user_service.model.records.RequestUsuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,6 +20,7 @@ public class Usuario {
     private String nome;
     private int idade;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(
             name = "jogofavorito",
