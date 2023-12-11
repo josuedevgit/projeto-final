@@ -102,7 +102,7 @@ Certifique-se de que o servidor esteja em execução na porta 8080 e que as URLs
   <tr>
     <td align="center">
       <a href="https://github.com/josuedevgit">
-       <img src="https://github.com/josuedevgit.png" 
+       <img src="https://github.com/josuedevgit/projeto-final/assets/116842009/afc34544-0cfa-4a99-b0e5-462c416c775d" 
        "smartCard-inline " width="100px;" alt="Foto de Josué"/><br>
         <sub>
           <b>Josué</b>
@@ -111,7 +111,7 @@ Certifique-se de que o servidor esteja em execução na porta 8080 e que as URLs
     </td>
     <td align="center">
       <a href="https://github.com/0hTutu">
-        <img src="https://github.com/0hTutu.png"
+        <img src="https://github.com/josuedevgit/projeto-final/assets/116842009/03bb68e0-eacd-4dfc-94df-f32be4bcf463"
           "smartCard-inline" width="100px;" alt="Foto de Arthur"/><br>
         <sub>
           <b>Arthur</b>
@@ -120,7 +120,7 @@ Certifique-se de que o servidor esteja em execução na porta 8080 e que as URLs
     </td>
     <td align="center">
       <a href="https://github.com/biancaoliveirx">
-        <img src="https://github.com/biancaoliveirx.png"
+        <img src="https://github.com/josuedevgit/projeto-final/assets/116842009/0692cbd5-800c-441a-a9d6-d60e48a43de4"
           "smartCard-inline" width="100px;" alt="Foto de Bianca"/><br>
         <sub>
           <b>Bianca</b>
@@ -129,7 +129,7 @@ Certifique-se de que o servidor esteja em execução na porta 8080 e que as URLs
     </td>
     <td align="center">
       <a href="https://github.com/Aliciafrom0">
-        <img src="https://github.com/Aliciafrom0.png"
+        <img src="https://github.com/josuedevgit/projeto-final/assets/116842009/2a3cf827-f0ca-4bd7-a188-844b8e2be35f"
           "smartCard-inline" width="100px;" alt="Foto de Alicia"/><br>
         <sub>
           <b>Alicia</b>
@@ -138,7 +138,7 @@ Certifique-se de que o servidor esteja em execução na porta 8080 e que as URLs
     </td>
     <td align="center">
       <a href="https://github.com/sdksantana">
-        <img src="https://github.com/sdksantana.png"
+        <img src="https://github.com/josuedevgit/projeto-final/assets/116842009/c983d34a-4cd2-4153-ab27-24b84229d11c"
           "smartCard-inline" width="100px;" alt="Foto de Kah"/><br>
         <sub>
           <b>Kah</b>
