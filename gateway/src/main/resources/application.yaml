@@ -22,6 +22,46 @@ spring:
           predicates:
             - Path=/api/usuarios/delete/{id}
 
+        - id: todos-jogos-usuario
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/jogosfavoritos
+
+        - id: todos-jogos-usuario-id
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/{id}/jogosfavoritos
+
+        - id: adiciona-jogos-usuario
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/{idUsuario}/addjogosfavoritos/{idZelda}
+
+        - id: analises-jogos-usuario
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/analises
+            
+        - id: analises-jogos-usuario-id
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/analises/{idAnalise}
+
+        - id: adiciona-analises-jogos-usuario
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/analises/adicionar
+
+        - id: atualiza-analises-jogos-usuario
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/analises/atualizar/{idAnalise}
+
+        - id: deleta-analises-jogos-usuario
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/analises/deletar/{idAnalise}
+
         - id: todos-jogos
           uri: http://localhost:8090/
           predicates:
