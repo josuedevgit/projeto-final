@@ -15,16 +15,12 @@ spring:
         - id: atualizar-usuarios
           uri: http://localhost:8081/
           predicates:
-            - Path=/api/usuarios/update/*
-          filters:
-            - RewritePath=/(?<id>.*), /${id}
+            - Path=/api/usuarios/update/{id}
 
         - id: deletar-usuarios
           uri: http://localhost:8081/
           predicates:
-            - Path=/api/usuarios/delete/*
-          filters:
-            - RewritePath=/(?<id>.*), /${id}
+            - Path=/api/usuarios/delete/{id}
 
         - id: todos-jogos
           uri: http://localhost:8090/
