@@ -6,3 +6,32 @@ spring:
           uri: http://localhost:8081/
           predicates:
             - Path=/api/usuarios
+
+        - id: adicionar-usuarios
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/add
+
+        - id: atualizar-usuarios
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/update/*
+          filters:
+            - RewritePath=/(?<id>.*), /${id}
+
+        - id: deletar-usuarios
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/delete/*
+          filters:
+            - RewritePath=/(?<id>.*), /${id}
+
+        - id: todos-jogos
+          uri: http://localhost:8090/
+          predicates:
+            - Path=/zelda
+
+        - id: jogos-por-id
+          uri: http://localhost:8090/
+          predicates:
+            - Path=/zelda/{id}
