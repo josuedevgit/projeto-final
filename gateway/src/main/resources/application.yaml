@@ -1,0 +1,33 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: listar-usuarios
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios
+
+        - id: adicionar-usuarios
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/add
+
+        - id: atualizar-usuarios
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/update/{id}
+
+        - id: deletar-usuarios
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/usuarios/delete/{id}
+
+        - id: todos-jogos
+          uri: http://localhost:8090/
+          predicates:
+            - Path=/zelda
+
+        - id: jogos-por-id
+          uri: http://localhost:8090/
+          predicates:
+            - Path=/zelda/{id}
